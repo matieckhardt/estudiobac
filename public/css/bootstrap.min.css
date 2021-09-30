@@ -184,6 +184,8 @@ a {
 }
 .contact-text {
   color:#F39C12 !important;
+  padding-top: 13px;
+
 }
 
 a:hover {
@@ -9567,7 +9569,7 @@ button.bg-dark:focus {
 
 .mt-4,
 .my-4 {
-  margin-top: -2.5rem !important
+  margin-top: -0.5rem !important
 }
 
 .mr-4,
