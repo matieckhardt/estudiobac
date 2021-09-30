@@ -1,0 +1,15 @@
+<section class="container my-5 flex-grow-1 wow animate__fadeIn animate__slow">
+  <h3 class="title">Tipos de Baños {{ProductoName}}</h3>
+  <div id="items-categoria" class="row mt-5 justify-content-center">
+    {{#each Productos}}
+      <div class="card card-custom mx-2 mb-3">
+        <a href="/Productos/Detalles/{{name}}">
+          <img src="{{img}}" alt="product img" class="card-img products-img" />
+          <div class="card-body d-flex flex-column mt-auto">
+            <h4 class="card-title mb-0">{{name}}</h4>
+          </div>
+        </a>
+      </div>
+    {{/each}}
+  </div>
+</section>

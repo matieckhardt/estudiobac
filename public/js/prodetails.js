@@ -1,0 +1,43 @@
+var variableImagenSeleccionado = 0;
+
+window.onload = function () {
+
+
+
+
+
+
+// **** ESTE ES EL CARRUSEL DE LOS PRODUCTOS ****
+$(".carousel-product").slick({
+    dots: true,
+    arrows: true,
+    autoplay: true,
+    draggable: true,
+    fade: true,
+    lazyLoad: 'progressive',
+    infinite: true,
+    autoplaySpeed: 5000,
+    speed: 3000,
+});
+}
+// **** ESTO ES EL TOGGLER DEL MENU PARA VERSION MOBILE ****
+$("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+
+// **** ACTIVA EL SCROLLREVEALER WOW ****
+var wow = new WOW({
+    boxClass: 'wow', // animated element css class (default is wow)
+    animateClass: 'animate__animated', // animation css class (default is animated)
+    offset: 15, // distance to the element when triggering the animation (default is 0)
+    mobile: false, // trigger animations on mobile devices (default is true)
+    live: true, // act on asynchronously loaded content (default is true)
+    callback: function (box) {
+        // the callback is fired every time an animation is started
+        // the argument that is passed in is the DOM node being animated
+    },
+    scrollContainer: null, // optional scroll container selector, otherwise use window,
+    resetAnimation: true, // reset animation on end (default is true)
+});
+wow.init();
