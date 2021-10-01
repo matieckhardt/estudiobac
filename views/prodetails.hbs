@@ -1,8 +1,8 @@
       <main class="col bg-white d-flex flex-column min-vh-100 wow animate__fadeIn animate__slow">
         <section class="carousel-product">
-           {{#each Car}}
+           {{#each slides}}
                         <div> 
-                            <div style="width: 100%; display: inline-block;"><img src="{{fotos}}"
+                            <div style="width: 100%; display: inline-block;"><img src="{{this}}"
                             loading="lazy "></div>
                         </div>                     
                       
@@ -12,11 +12,11 @@
                         {{#each detalles}}
               <div class="row">
             <div class="col-lg-4 col-md-5 col-sm-12 mb-3 wow animate__fadeInLeft animate__delay-4s px-4">
-              <h5 class="btn btn-lg btn-block btn-success">Especificacion A: {{SpA}}</h5>
-              <h5 class="btn btn-lg btn-block btn-success">Especificacion B: {{SpB}}</h5>
-              <h5 class="btn btn-lg btn-block btn-success">Especificacion C: {{SpC}}</h5>
-              <h5 class="btn btn-lg btn-block btn-success">Especificacion D: {{SpD}}</h5>
-              <h5 class="btn btn-lg btn-block btn-success">Especificacion E: {{SpE}}</h5>
+              <h5 class="btn btn-lg btn-block btn-success">Estado: {{SpA}}</h5>
+              <h5 class="btn btn-lg btn-block btn-success">Año: {{SpB}}</h5>
+              <h5 class="btn btn-lg btn-block btn-success">Dimensiones: {{SpC}}</h5>
+              <h5 class="btn btn-lg btn-block btn-success">Habitaciones: {{SpD}}</h5>
+              <h5 class="btn btn-lg btn-block btn-success">Domicilio: {{SpE}}</h5>
             </div>
             <div class="col-lg-8 col-md-7 col-sm-12 wow animate__fadeInRight animate__slow px-4">
               <h3 class="title">{{Titulo}}</h3>

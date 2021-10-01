@@ -7791,7 +7791,7 @@ button.bg-info:focus {
 }
 
 .bg-warning {
-  background-color: #Ffca12 !important
+  background-color: #00374d !important
 }
 
 a.bg-warning:hover,
@@ -11779,7 +11779,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #00374d !important
+  color: #fff !important
 }
 
 a.text-primary:hover,

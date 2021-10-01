@@ -29,46 +29,6 @@ router.get("/", async (req, res) => {
 
 // rutas a secciones 
 
-router.get("/Productos/Detalles/:details", async (req, res) => {
-  try {
-    const Detalles = await Productos.find({ Title: req.params.details });
-    const DetallesImg = await Productos.find();
-    const fotos = DetallesImg[0].imgCar.map(
-      (imgCar) => ({ fotos: imgCar })
-    );
-    const datos = Detalles.map(
-      ({ Title,
-        MainImageURL,
-        Description,
-        Resumen,
-        SpecA,
-        SpecB,
-        SpecC,
-        SpecD,
-        SpecE,
-        SubCategoriaName,
-        LinkUrl, }) => ({
-          Titulo: Title,
-          img: MainImageURL,
-          Descrip: Description,
-          Resumen: Resumen,
-          SpA: SpecA,
-          SpB: SpecB,
-          SpC: SpecC,
-          SpD: SpecD,
-          SpE: SpecE,
-          link: LinkUrl,
-          SubCat: SubCategoriaName,
-
-        })
-    );
-    res.render("prodetails", { Car: fotos, detalles: datos, headContent: 'Detalles' });
-    console.log(datos)
-  } catch (error) {
-    console.log("ups", error);
-  }
-});
-
 router.get("/AboutUs", function (req, res) {
   res.render("about-us", { headContent: 'Nosotros' });
 });
@@ -158,7 +118,43 @@ router.get("/Categorias/:producto", async (req, res) => {
   }
 });
 
+// Rutas de Productos Detalles 
 
+router.get("/Productos/Detalles/:details", async (req, res) => {
+  try {
+    const detalles = await Productos.find({ Title: req.params.details });
+     const datos = detalles.map(
+      ({ Title,
+        MainImageURL,
+        Description,
+        Resumen,
+        SpecA,
+        SpecB,
+        SpecC,
+        SpecD,
+        SpecE,
+        SubCategoriaName,
+        LinkUrl, }) => ({
+          Titulo: Title,
+          img: MainImageURL,
+          Descrip: Description,
+          Resumen: Resumen,
+          SpA: SpecA,
+          SpB: SpecB,
+          SpC: SpecC,
+          SpD: SpecD,
+          SpE: SpecE,
+          link: LinkUrl,
+          SubCat: SubCategoriaName,
+        })
+    );
+    console.log(detalles[0].imgCar)
+    res.render("prodetails", { detalles: datos, slides: detalles[0].imgCar,  headContent: 'Detalles' });
+
+  } catch (error) {
+    console.log("ups", error);
+  }
+});
 
 // Ruta para postear cosas a la base de ejemplo
 router.post("/nuevoProd", async (req, res) => {
