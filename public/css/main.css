@@ -446,7 +446,7 @@ footer {
     margin-top: 30px;
 }
 
-@media screen and (min-width:1600px) {
+@media screen and (min-width:1681px) {
     .container {
         max-width: 1350px;
     }
@@ -458,6 +458,10 @@ footer {
     }
     #footer-ul{
         margin-top: 30px;
+    }
+    .brand-logo {
+        max-height: 150px;
+        margin-bottom: 170px;
     }
 }
 
@@ -474,11 +478,16 @@ footer {
     #footer-ul{
         margin-top: 30px;
     }
+    .brand-logo {
+        max-height: 150px;
+        margin-bottom: 120px;
+    }
 }
 
 @media screen and (max-width:1366px) {
     .brand-logo {
         max-height: 150px;
+        margin-bottom: 90px;
     }
 
     span,
