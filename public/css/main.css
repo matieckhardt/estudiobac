@@ -636,6 +636,7 @@ footer {
     .brand-logo {
         width: auto;
         max-height: 55px;
+        margin-bottom: 0px;
     }
 
     #social-nav {
