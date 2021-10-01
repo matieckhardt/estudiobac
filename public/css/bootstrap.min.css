@@ -178,7 +178,7 @@ sup {
 
 a {
 
-  color: #0386B2;
+  color: rgba(136, 204, 241, 0.8);
   text-decoration: none;
   background-color: transparent
 }
@@ -5654,7 +5654,7 @@ input[type="button"].btn-block {
   border-top: 0
 }
 
-.card-footer {
+.card- {
   padding: 0.75rem 1.25rem;
   background-color: rgba(0, 0, 0, 0.03);
   border-top: 1px solid rgba(0, 0, 0, 0.125)
@@ -7890,7 +7890,7 @@ button.bg-dark:focus {
 }
 
 .border-success {
-  border-color: #0386B2 !important
+  border-color: #111 !important
 }
 
 .border-info {
@@ -12217,7 +12217,7 @@ a.text-dark:focus {
 }
 
 aside .bg-primary {
-  background-color: #000000 !important;
+  background-color: #111 !important;
 }
 
 aside .btn-success {

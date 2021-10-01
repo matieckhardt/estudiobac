@@ -29,21 +29,6 @@ router.get("/", async (req, res) => {
 
 // rutas a secciones 
 
-router.get("/Categories", async (req, res) => {
-  try {
-    const items = await Categoria.find();
-    const datos = items.map(
-      ({ CategoriaId, CategoriaName }) => ({
-        id: CategoriaId,
-        nombre: CategoriaName,
-      })
-    );
-    res.render("categories", { categorias: datos, headContent: 'Categorias' });
-  } catch (error) {
-    console.log("ups", error);
-  }
-});
-
 router.get("/Productos/Detalles/:details", async (req, res) => {
   try {
     const Detalles = await Productos.find({ Title: req.params.details });
@@ -112,7 +97,24 @@ router.get("/Shop", function (req, res) {
   res.render("shop", { headContent: 'Shop' });
 });
 
-// Rutas de las Sub Categorias
+// Rutas Categorias 
+router.get("/Categories", async (req, res) => {
+  try {
+    const items = await Categoria.find();
+    const datos = items.map(
+      ({ CategoriaId, CategoriaName }) => ({
+        id: CategoriaId,
+        nombre: CategoriaName,
+      })
+    );
+    res.render("categories", { categorias: datos, headContent: 'Categorias' });
+  } catch (error) {
+    console.log("ups", error);
+  }
+});
+
+
+/* Rutas de las Sub Categorias
 router.get("/Categorias/:subcat", async (req, res) => {
   try {
     const items = await Categoria.find({ CategoriaName: req.params.subcat });
@@ -131,9 +133,10 @@ router.get("/Categorias/:subcat", async (req, res) => {
     console.log("ups", error);
   }
 });
+*/
 
 // Rutas de los Productos
-router.get("/Categorias/:subcat/:producto", async (req, res) => {
+router.get("/Categorias/:producto", async (req, res) => {
   try {
     const producto = req.params.producto;
     const items = await Productos.find({ SubCategoriaName: req.params.producto });
@@ -180,24 +183,13 @@ router.post("/nuevoProd", async (req, res) => {
   }
 });
 
-  router.post("/postSubCat", async (req, res) => {
-    const datos = [
-      {
-        CategoriaId: 1,
-        CategoriaName: "Residenciales",
-        SubCategorias: [
-          {
-            SubCategoriaId: 1,
-            SubCategoriaName: "Residenciales",
-          },
-        ],
-      },
-    ];
+  router.post("/postProj", async (req, res) => {
+    const datos = [] ;
     try {
       datos.forEach(async (dato) => {
-        const categorias = new Categoria(dato);
-        console.log(categorias);
-        await categorias.save();
+        const productos = new Productos(dato);
+        console.log(productos);
+        await productos.save();
       });
       res.status(201).json("ok");
     } catch (error) {

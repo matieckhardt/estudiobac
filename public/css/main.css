@@ -1,4 +1,9 @@
 @import url("https://use.typekit.net/vyd5rui.css");
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@font-face {
+    font-family: "brown-thin";
+    src: url("/fonts/brown-thin-webfont.ttf") format("truetype");
+}
 
 html {
     font-family: futura-pt, sans-serif;
@@ -14,6 +19,29 @@ h1{
     font-weight: 400;
     color: #ffaa00;
 }
+
+
+.bac-heading-us {
+    font-size: 5em !important;
+    font-family: "brown-thin", sans-serif !important;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: orange;
+    text-align: center;
+    margin-bottom: 0.7em;
+    line-height: 1.1;
+}
+
+.bac-heading-us:before, h1.bac-heading-us:after {
+    background-color: orange;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: super;
+    width: 19%;
+}
+
 
 h2,
 h3{
@@ -82,10 +110,9 @@ main {
 }
 
 footer {
-    border-top: 4px solid;
     box-shadow: 0 -10px 28px rgba(0, 0, 0, .22),
         0 -7px 20px rgba(0, 0, 0, .2) !important;
-        background-color: black;
+        background-color: #111;
 }
 
 
