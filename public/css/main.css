@@ -292,7 +292,7 @@ footer {
 }
 
 .card-custom .card-body {
-    border-top: 3px solid #ffca12;
+    border-top: 3px solid #00374d;
     padding: .75rem;
     background: #ccc;
     color: #00374d;
@@ -310,8 +310,7 @@ footer {
 
 .products-img {
     height: 250px;
-    object-fit: contain;
-    padding: 10px 12px;
+    object-fit: fill;
 }
 
 .custom-file-input~.custom-file-label::after {
