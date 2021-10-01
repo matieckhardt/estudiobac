@@ -97,7 +97,7 @@ main {
 .brand-logo {
     max-height: 130px;
     object-fit: cover;
-    margin-bottom: 0;
+    margin-bottom: 35px;
 }
 
 .mini-logo {
